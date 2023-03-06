@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@drawable/bluesky"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="0sp"
+        android:text="San Francisco"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="381dp"
+        android:layout_height="69dp"
+        app:srcCompat="@drawable/sun" />
+
+    <TextView
+        android:id="@+id/currentTemp"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Current Temperature"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <!--                Output                -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        android:scrollbarStyle="insideOverlay">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="30px"
+            app:columnCount="2"
+            app:useDefaultMargins="true"
+            tools:visibility="visible">
+
+
+            <ImageView
+                android:id="@+id/titleImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/umbrella" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Current weather"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/descriptionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/cloud" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Weather description"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/feelsLikeImage"
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/feelsLike"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Perceived temperature"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/humidityImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/humidity" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/windSpeedImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pressure" />
+
+            <TextView
+                android:id="@+id/windSpeed"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Wind speed"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/cloudinessImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/cloud" />
+
+            <TextView
+                android:id="@+id/cloudiness"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Cloudiness"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:id="@+id/pressureImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/thermometer" />
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Pressure"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btnGet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#58B6FF"
+        android:onClick="getWeatherDetails"
+        android:text="GET WEATHER INFORMATION"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@null" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Enter City Name"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Country Code"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
